@@ -1,0 +1,252 @@
+.myaccountprivacyreq-info-card {
+	font-weight: 400;
+
+	%spacer {
+		margin-bottom: 2.5rem;
+	}
+	button.sendRequest {
+		@extend .button-medium;
+		@extend .button-primary;
+	}
+
+	h2 {
+		@extend %spacer;
+		border-bottom: 5px solid #e2e4e8;
+		padding-bottom: 1rem;
+		margin-bottom: 10px;
+	}
+	.myaccountprivacyreq-subtitle{
+		margin-bottom: 35px;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 16px;
+		width: 75%;
+	}
+	.privacy-address-content label{
+		text-transform: uppercase;
+		font-size: 13px;
+		font-weight: 700;
+	}
+
+	.showInitForm {
+		ul {
+			@extend %spacer;
+
+			li {
+				label {
+					display: flex;
+					@extend %spacer;
+
+					input {
+						margin: 5px 10px 0px 0px;
+					}
+
+					p {
+						text-transform: uppercase;
+						font-weight: 700;
+					}
+				}
+			}
+
+			.warning {
+				color: red;
+				display: block;
+				font-size: 0.867em;
+				text-transform: initial;
+				font-weight: 700;
+			}
+		}
+
+		// button {
+		// 	text-transform: uppercase;
+		// 	font-weight: 700;
+		// 	background: #176EC1;
+		// 	line-height: 21px;
+		// 	min-width: 126px;
+		// 	padding: 10px 20px;
+		// 	border-radius: 3px;
+		// 	color: #fff;
+		// 	display: inline-block;
+		// 	border: #176EC1 solid 1px;
+		// 	text-align: center;
+		// 	font-family: $sc-font-family;
+
+		// 	&:hover {
+		// 		background: #104D87;
+		// 	}
+		// }
+	}
+
+	.rdcontents {
+		.notif {
+			background: #faedad;
+			border: 1px solid #f4dc7e;
+			margin-bottom: 1rem;
+			padding: .5em;
+			display: inline-block;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		h3 {
+			padding: 1rem 0 0;
+		}
+
+		h3,
+		p {
+			margin-bottom: 1rem;
+		}
+
+		ul {
+			margin: 0 20px;
+
+			li {
+				list-style: disc;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+.address-form-two-column {
+	&>div {
+		@extend .col-md-6;
+		padding-left: 0;
+	}
+}
+
+.address-container {
+	@extend .container;
+
+	.vv_titlebox {
+		h1 {
+			margin-bottom: 1rem !important;
+		}
+
+		p {
+			font-size: 1.125em;
+			font-style: italic;
+		}
+	}
+}
+
+.address-alert-placeholder {
+	margin: $sc-margin-lv2 0;
+}
+
+.address-content {
+	@extend .box-column-bordered;
+}
+
+.address-header {
+	margin-bottom: $sc-margin-lv4;
+}
+
+.address-header-cms {
+	margin-top: $sc-margin-lv2;
+}
+
+.address-button-back {
+	@extend .button-back;
+}
+
+.address-button-back-icon {
+	@extend .button-back-icon;
+}
+
+.address-required {
+	display: block;
+	margin-top: $sc-margin-lv4;
+}
+
+.address-form-controls-group {
+	@extend .control-group;
+}
+
+.address-form-required {
+	@extend .input-required;
+}
+
+// .address-form-input,
+// .address-form-case-category {
+
+//     width: 100%;
+//     max-width: 500px;
+// }
+
+.address-form-textarea {
+	display: block;
+	margin-bottom: $sc-margin-lv2;
+	width: 100%;
+}
+
+.address-button-submit {
+	@extend .button-medium;
+	@extend .button-primary;
+}
+
+.address-button-back {
+	@extend .button-back;
+}
+
+.address-button-back-icon {
+	@extend .button-back;
+}
+
+
+@media (min-width:768px) {
+	.privacy-address-content {
+
+		width: 75%;
+		display: grid;
+		margin-bottom: 30px;
+	}
+
+	.privacy-address-content .address-edit-fields-group {
+
+		width: 50%;
+		padding-right: 15px;
+	}
+}
+
+.myaccountprivacyreq-info-card {
+	small.warning {
+		color: red;
+		line-height: 1;
+	}
+}
+
+.rdcontentsbutton {
+	display: flex;
+	justify-content: space-between;
+
+	button {
+		margin-left: 20px;
+		width: 130px;
+		@extend .button-medium;
+		@extend .button-primary;
+	}
+}
+.global-views-confirmation-confirm-button {
+	@extend .button-primary;
+	padding: $sc-padding-lv2;
+	margin-right: $sc-margin-base;
+}
+.global-views-confirmation-cancel-button {
+	@extend .button-primary-inverse;
+	padding: $sc-padding-lv2;
+}
+.privacy-uniqueid{
+	display: flex;
+    align-items: center;
+	white-space: break-spaces;
+	margin-bottom: 10px;
+}
+
+.confirmation-list{
+	li{
+		list-style: disc;
+	}
+}

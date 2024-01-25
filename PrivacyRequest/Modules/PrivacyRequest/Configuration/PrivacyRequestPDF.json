@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "subtab": {
+    "id": "PrivacyRequestPDF",
+    "title": "Privacy Request PDF Details",
+    "group": "valleyVet"
+  },
+  "properties": {
+    "PrivacyRequestPDF.suitelet": {
+      "group": "valleyVet",
+      "subtab": "PrivacyRequestPDF",
+      "type": "string",
+      "title": "Suitelet External URL",
+      "default":"https://386782-sb2.extforms.netsuite.com/app/site/hosting/scriptlet.nl?script=5121&deploy=1&compid=386782_SB2&h=d187e6f6be8fb790846e"
+    }
+  }
+}

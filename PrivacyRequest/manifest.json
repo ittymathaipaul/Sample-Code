@@ -1,0 +1,110 @@
+{
+    "name": "PrivacyRequest",
+    "fantasyName": "Privacy Request",
+    "vendor": "CD",
+    "version": "1.0.4",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.1.0",
+        "SCS": ">=20.1.0"
+    },
+    "description": "Privacy request page without loggin",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PrivacyRequest.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/PrivacyRequest/Configuration/PrivacyRequestPDF.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/PrivacyRequest/Sass/_privacyrequest-privacyrequest.scss",
+            "myaccount": "Modules/PrivacyRequest/Sass/_privacyrequest-privacyrequest.scss",
+            "checkout": "Modules/PrivacyRequest/Sass/_privacyrequest-privacyrequest.scss"
+        },
+        "files": [
+            "Modules/PrivacyRequest/Sass/_privacyrequest-privacyrequest.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PrivacyRequest/Templates/cd_privacyrequest_privacyrequest.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PrivacyRequest/Templates/cd_privacyrequest_privacyrequest.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/PrivacyRequest/Templates/cd_privacyrequest_privacyrequest.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js",
+            "myaccount": "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js",
+            "checkout": "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.View.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.Model.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.SS2Model.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.router.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.View.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.Model.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.SS2Model.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.router.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.View.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.Model.js",
+                    "Modules/PrivacyRequest/JavaScript/CD.PrivacyRequest.PrivacyRequest.SS2Model.js",
+                    "Modules/PrivacyRequest/JavaScript/PrivacyRequest.router.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PrivacyRequest/SuiteScript/PrivacyRequest.ServiceController.js",
+        "files": [
+            "Modules/PrivacyRequest/SuiteScript/CD.PrivacyRequest.PrivacyRequest.js",
+            "Modules/PrivacyRequest/SuiteScript/PrivacyRequest.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\PrivacyRequest",
+    "suitescript2": {
+        "files": [
+            "Modules/PrivacyRequest/SuiteScript2/PrivacyRequest.Service.ss"
+        ]
+    }
+}
