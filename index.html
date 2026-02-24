@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Wedding Invitation – Sarah & James</title>
+  <title>Engagement & Wedding Invitation – Rosemary & Ittymathew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
@@ -78,13 +78,11 @@
     .envelope-wrapper:hover { transform: scale(1.03); }
     .envelope-wrapper:active { transform: scale(0.97); }
 
-    /* Envelope SVG parts */
     .env-body {
       width: 100%;
       transition: transform 0.6s ease;
     }
 
-    /* Flap animation */
     .env-flap {
       transform-origin: top center;
       transition: transform 0.7s cubic-bezier(.4,0,.2,1);
@@ -93,7 +91,6 @@
       transform: rotateX(180deg);
     }
 
-    /* Invitation card sliding out */
     .env-card {
       position: absolute;
       left: 50%;
@@ -218,17 +215,22 @@
 
     .hero-florals { position: absolute; inset: 0; pointer-events: none; }
 
-    .hero-date-badge {
-      display: inline-block;
-      border: 1px solid var(--gold);
-      border-radius: 50px;
-      padding: 6px 20px;
-      font-size: clamp(10px,2.5vw,12px);
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .hero-verse {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(13px, 3.5vw, 16px);
+      color: var(--rose);
+      max-width: 320px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .hero-verse cite {
+      display: block;
+      font-style: normal;
+      font-size: clamp(10px, 2.5vw, 12px);
+      letter-spacing: 2px;
       color: var(--gold);
-      margin-bottom: 16px;
-      background: rgba(255,255,255,0.6);
+      margin-top: 6px;
     }
 
     .hero-names {
@@ -261,39 +263,28 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--rose);
+      margin-bottom: 16px;
     }
 
-    .hero-photo {
-      margin-top: 28px;
-      width: min(240px, 70vw);
-      height: min(300px, 85vw);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      object-fit: cover;
-      border: 3px solid var(--gold-light);
-      box-shadow: 0 8px 40px rgba(74,44,53,0.2);
-      position: relative;
-      z-index: 2;
+    .hero-parents {
+      margin-top: 20px;
+      font-size: clamp(12px, 3vw, 14px);
+      color: var(--text);
+      line-height: 1.8;
+      text-align: center;
     }
-
-    /* Couple photo placeholder */
-    .couple-placeholder {
-      margin-top: 28px;
-      width: min(240px, 70vw);
-      height: min(300px, 85vw);
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      border: 3px solid var(--gold-light);
-      box-shadow: 0 8px 40px rgba(74,44,53,0.2);
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-      background: linear-gradient(145deg, #f5e6e0, #e8d5a3, #f0d9c8);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .hero-parents .parent-group {
+      margin-bottom: 10px;
     }
-    .couple-placeholder svg { width: 80px; height: 80px; opacity: 0.4; }
-    .couple-placeholder p { font-family: 'Great Vibes', cursive; color: var(--gold); font-size: 18px; margin-top: 8px; opacity: 0.7; }
+    .hero-parents strong {
+      color: var(--deep);
+      font-weight: 600;
+    }
+    .hero-parents .house {
+      font-size: clamp(11px, 2.5vw, 12px);
+      color: #7a5060;
+      letter-spacing: 0.5px;
+    }
 
     /* ══════════════════════════════
        SECTION 2 – EVENT DETAILS
@@ -326,35 +317,96 @@
       line-height: 1.1;
     }
 
+    /* Event block wrapper */
+    .event-block {
+      width: min(380px, 92vw);
+      margin: 0 auto 28px;
+    }
+    .event-block-label {
+      font-size: clamp(10px, 2.5vw, 11px);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .event-block-label::before,
+    .event-block-label::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      vertical-align: middle;
+      margin: 0 10px;
+      opacity: 0.5;
+    }
+
+    .event-divider {
+      width: min(300px, 80vw);
+      border: none;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      margin: 8px auto 28px;
+    }
+
     .details-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      width: min(380px, 90vw);
-      margin: 0 auto 32px;
+      gap: 14px;
+      width: 100%;
     }
 
     .detail-card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(201,168,76,0.25);
       border-radius: 12px;
-      padding: 20px 14px;
+      padding: 16px 12px;
       position: relative;
     }
     .detail-card.full { grid-column: 1 / -1; }
-    .detail-card-icon { font-size: 24px; margin-bottom: 8px; }
+    .detail-card-icon { font-size: 22px; margin-bottom: 6px; }
     .detail-card-label {
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .detail-card-value {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(15px, 4vw, 18px);
+      font-size: clamp(13px, 3.5vw, 16px);
       color: var(--cream);
       line-height: 1.4;
+    }
+
+    /* QR code inside venue card */
+    .venue-qr-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+    }
+    .venue-qr-row .venue-text { flex: 1; }
+    .venue-qr-wrap {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .venue-qr-wrap img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      border: 2px solid rgba(201,168,76,0.4);
+      background: white;
+      padding: 3px;
+    }
+    .venue-qr-wrap span {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
     }
 
     .countdown-bar {
@@ -374,54 +426,71 @@
     .countdown-sep { font-size: 28px; color: var(--gold); opacity: 0.4; align-self: flex-start; padding-top: 4px; }
 
     /* ══════════════════════════════
-       SECTION 3 – STORY / GALLERY
+       SECTION 3 – FAMILY INFO
     ══════════════════════════════ */
     #section-story {
       background: linear-gradient(180deg, #fdf6ec 0%, #f5e6e0 100%);
       text-align: center;
     }
 
-    .story-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: min(380px, 90vw);
-      margin: 28px auto 0;
-    }
-
-    .story-card {
+    .family-card {
+      width: min(380px, 92vw);
       background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(74,44,53,0.1);
-      display: flex;
-      align-items: stretch;
-      text-align: left;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(74,44,53,0.1);
+      padding: clamp(24px, 6vw, 36px);
+      margin: 0 auto 20px;
+      border: 1px solid rgba(201,168,76,0.2);
+      text-align: center;
     }
-    .story-card:nth-child(even) { flex-direction: row-reverse; }
+    .family-card-role {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .family-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(16px, 4.5vw, 20px);
+      color: var(--deep);
+      margin-bottom: 4px;
+    }
+    .family-card-parents {
+      font-size: clamp(13px, 3vw, 14px);
+      color: #6b4c55;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .family-card-address {
+      font-size: clamp(11px, 2.8vw, 12px);
+      color: #9a7080;
+      letter-spacing: 0.5px;
+      font-style: italic;
+    }
 
-    .story-card-img {
-      width: 110px;
-      min-height: 120px;
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .story-card-img-inner {
-      width: 100%;
-      height: 100%;
+    .family-connector {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+      gap: 12px;
+      margin: 6px 0;
+      color: var(--rose);
     }
-    .story-card-body { padding: 16px 14px; flex: 1; }
-    .story-card-year { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-    .story-card-title { font-family: 'Playfair Display', serif; font-size: clamp(14px,4vw,16px); color: var(--deep); margin-bottom: 6px; }
-    .story-card-text { font-size: clamp(12px,3vw,13px); color: #6b4c55; line-height: 1.6; }
+    .family-connector hr { flex: 1; border: none; border-top: 1px solid var(--gold-light); max-width: 60px; }
+    .family-connector span { font-family: 'Great Vibes', cursive; font-size: 28px; }
+
+    .invite-text {
+      width: min(380px, 92vw);
+      text-align: center;
+      font-size: clamp(13px, 3.5vw, 15px);
+      color: var(--text);
+      line-height: 1.9;
+      font-style: italic;
+    }
 
     /* ══════════════════════════════
-       SECTION 4 – RSVP
+       SECTION 4 – BLESSINGS / CLOSE
     ══════════════════════════════ */
     #section-rsvp {
       background: linear-gradient(160deg, #4a2c35 0%, #3a2020 100%);
@@ -429,82 +498,42 @@
       text-align: center;
     }
 
-    .rsvp-card {
+    .blessing-card {
       background: rgba(253,246,236,0.06);
       border: 1px solid rgba(201,168,76,0.3);
       border-radius: 20px;
-      padding: clamp(24px,6vw,40px);
-      width: min(380px, 90vw);
+      padding: clamp(28px, 7vw, 48px);
+      width: min(380px, 92vw);
       position: relative;
       z-index: 2;
+      text-align: center;
     }
-
-    .rsvp-form { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
-
-    .rsvp-input {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 10px;
-      padding: 14px 16px;
+    .blessing-cross {
+      font-size: 28px;
+      margin-bottom: 12px;
+      opacity: 0.8;
+    }
+    .blessing-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(14px,4vw,16px);
-      color: var(--cream);
-      outline: none;
-      transition: border-color 0.3s;
-      width: 100%;
+      font-style: italic;
+      font-size: clamp(14px, 4vw, 17px);
+      color: rgba(253,246,236,0.85);
+      line-height: 1.9;
+      margin-bottom: 20px;
     }
-    .rsvp-input::placeholder { color: rgba(253,246,236,0.4); }
-    .rsvp-input:focus { border-color: var(--gold); }
-
-    .rsvp-radio-group {
-      display: flex;
-      gap: 10px;
-    }
-    .rsvp-radio-btn {
-      flex: 1;
-      padding: 12px 8px;
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 10px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(13px,3.5vw,15px);
-      color: var(--cream);
-      background: rgba(255,255,255,0.05);
-      cursor: pointer;
-      transition: all 0.3s;
-      letter-spacing: 1px;
-    }
-    .rsvp-radio-btn.active { background: var(--gold); border-color: var(--gold); color: var(--deep); font-weight: 700; }
-
-    .rsvp-submit {
-      background: linear-gradient(135deg, var(--gold), #b8923c);
-      border: none;
-      border-radius: 50px;
-      padding: 16px 32px;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(14px,4vw,16px);
-      color: var(--deep);
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: 2px;
+    .sharing-label {
+      font-size: 10px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      margin-top: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+      color: var(--gold);
+      margin-bottom: 10px;
     }
-    .rsvp-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.45); }
-    .rsvp-submit:active { transform: translateY(0); }
-
-    .rsvp-success {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      padding: 20px 0;
+    .sharing-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(24px, 7vw, 32px);
+      color: var(--gold-light);
+      line-height: 1.4;
     }
-    .rsvp-success.show { display: flex; }
-    .rsvp-success svg { width: 60px; height: 60px; }
-    .rsvp-success h3 { font-family: 'Great Vibes', cursive; font-size: 36px; color: var(--gold); }
-    .rsvp-success p { font-size: 14px; color: rgba(253,246,236,0.7); letter-spacing: 1px; }
 
     .footer-note {
       margin-top: 40px;
@@ -531,8 +560,8 @@
     @media (max-width: 380px) {
       .details-grid { grid-template-columns: 1fr; }
       .detail-card.full { grid-column: auto; }
-      .story-card, .story-card:nth-child(even) { flex-direction: column; }
-      .story-card-img { width: 100%; height: 100px; }
+      .venue-qr-row { flex-direction: column; text-align: center; }
+      .venue-qr-row .venue-text { text-align: center; }
     }
   </style>
 </head>
@@ -546,7 +575,7 @@
   <!-- Floating petals -->
   <div id="petals"></div>
 
-  <!-- Corner florals (SVG inline) -->
+  <!-- Corner florals -->
   <svg class="floral-svg" style="top:-10px;left:-10px;width:160px;height:160px;" viewBox="0 0 200 200" fill="none">
     <g opacity="0.6">
       <circle cx="30" cy="30" r="18" fill="#f5c6c6" /><circle cx="60" cy="20" r="12" fill="#f9ddd0" />
@@ -577,25 +606,19 @@
     <!-- Invite card (slides out) -->
     <div class="env-card">
       <div class="env-card-inner">
-        Sarah & James<br/>
-        <small>Wedding Invitation</small>
+        Rosemary &amp; Ittymathew<br/>
+        <small>Engagement &amp; Wedding</small>
       </div>
     </div>
 
     <!-- SVG Envelope -->
     <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" class="env-body">
-      <!-- Envelope back/body -->
       <rect x="0" y="20" width="320" height="180" rx="8" fill="#f2e4cc" stroke="#d4b483" stroke-width="1.5"/>
-      <!-- Envelope side triangles (inside) -->
       <polygon points="0,20 160,120 320,20" fill="#e8d5b0" />
       <polygon points="0,20 0,200 160,120" fill="#ddc89a" />
       <polygon points="320,20 320,200 160,120" fill="#ddc89a" />
       <polygon points="0,200 160,120 320,200" fill="#e8d5b0" />
-
-      <!-- Envelope flap (animated) -->
       <polygon class="env-flap" points="0,20 160,110 320,20" fill="#f5e9d0" stroke="#d4b483" stroke-width="1.5" stroke-linejoin="round"/>
-
-      <!-- Gold border lines -->
       <rect x="6" y="26" width="308" height="168" rx="5" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.6"/>
     </svg>
 
@@ -604,8 +627,7 @@
       <circle cx="30" cy="30" r="28" fill="#8b2635" />
       <circle cx="30" cy="30" r="24" fill="none" stroke="#c9a84c" stroke-width="1.5" />
       <circle cx="30" cy="30" r="20" fill="#a02d3e" />
-      <!-- Stylised S&J monogram -->
-      <text x="30" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#e8d5a3" font-style="italic">S&amp;J</text>
+      <text x="30" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#e8d5a3" font-style="italic">R&amp;I</text>
     </svg>
   </div>
 
@@ -648,12 +670,15 @@
       </svg>
     </div>
 
-    <div class="hero-date-badge fade-in">15 · November · 2025</div>
+    <div class="hero-verse fade-in">
+      "I have found the one whom my soul loves"
+      <cite>Song of Solomon 3:4</cite>
+    </div>
 
     <div class="hero-names fade-in delay-1">
-      Sarah<br/>
+      Rosemary<br/>
       <span class="hero-ampersand">&</span>
-      James
+      Ittymathew
     </div>
 
     <div class="hero-divider fade-in delay-2">
@@ -664,16 +689,14 @@
       <hr/>
     </div>
 
-    <div class="hero-subtitle fade-in delay-3">Together Forever</div>
+    <div class="hero-subtitle fade-in delay-3">Engagement &amp; Wedding</div>
 
-    <!-- Couple photo placeholder -->
-    <div class="couple-placeholder fade-in delay-4">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="35" cy="30" r="16" fill="rgba(201,168,76,0.3)"/>
-        <circle cx="65" cy="30" r="16" fill="rgba(201,168,76,0.3)"/>
-        <path d="M10 80 Q35 55 50 65 Q65 55 90 80" fill="rgba(201,168,76,0.25)"/>
-      </svg>
-      <p>Our Photo</p>
+    <div class="hero-parents fade-in delay-4">
+      <div class="parent-group">
+        <strong>Mr. Antony P V &amp; Mrs. Mini Antony</strong><br/>
+        <span class="house">Pallipadan House, Pudukad P.O, Thrissur</span><br/>
+        <span style="font-size:clamp(11px,2.5vw,13px);color:var(--rose);">cordially invite you with family for the engagement of their daughter</span>
+      </div>
     </div>
 
     <a class="scroll-arrow" href="#section-details" aria-label="Scroll to details">
@@ -697,28 +720,95 @@
       <circle cx="60" cy="50" r="3" fill="#c9a84c"/><circle cx="240" cy="50" r="3" fill="#c9a84c"/>
     </svg>
 
-    <p class="section-tag fade-in">Wedding Details</p>
-    <h2 class="section-title fade-in delay-1">The Celebration</h2>
+    <p class="section-tag fade-in">Save the Dates</p>
+    <h2 class="section-title fade-in delay-1">The Celebrations</h2>
 
-    <div class="details-grid">
-      <div class="detail-card fade-in delay-1">
-        <div class="detail-card-icon">📅</div>
-        <div class="detail-card-label">Date</div>
-        <div class="detail-card-value">Saturday<br/>Nov 15, 2025</div>
-      </div>
-      <div class="detail-card fade-in delay-2">
-        <div class="detail-card-icon">⏰</div>
-        <div class="detail-card-label">Time</div>
-        <div class="detail-card-value">4:00 PM<br/>Ceremony</div>
-      </div>
-      <div class="detail-card full fade-in delay-3">
-        <div class="detail-card-icon">📍</div>
-        <div class="detail-card-label">Venue</div>
-        <div class="detail-card-value">The Grand Rose Garden<br/>123 Blossom Lane, Cityville</div>
+    <!-- EVENT 1: ENGAGEMENT -->
+    <div class="event-block fade-in delay-2">
+      <div class="event-block-label">Engagement Ceremony</div>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-card-icon">📅</div>
+          <div class="detail-card-label">Date</div>
+          <div class="detail-card-value">Saturday<br/>11 April 2026</div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-card-icon">⏰</div>
+          <div class="detail-card-label">Time</div>
+          <div class="detail-card-value">11:30 AM</div>
+        </div>
+        <div class="detail-card full">
+          <div class="detail-card-label">📍 Church</div>
+          <div class="venue-qr-row">
+            <div class="venue-text">
+              <div class="detail-card-value">St. Antony's Forane Church<br/>Pudukad</div>
+            </div>
+            <div class="venue-qr-wrap">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=4a2c35&bgcolor=fdf6ec&data=https://maps.google.com/?q=St+Antony+Forane+Church+Pudukad+Thrissur+Kerala"
+                alt="Map QR – St. Antony's Church"
+                loading="lazy"
+              />
+              <span>Get Directions</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail-card full">
+          <div class="detail-card-label">🥂 Reception</div>
+          <div class="venue-qr-row">
+            <div class="venue-text">
+              <div class="detail-card-value">Zion Parish Hall<br/>Pudukad</div>
+              <div style="font-size:11px;color:rgba(253,246,236,0.5);margin-top:4px;letter-spacing:1px;">Following the ceremony</div>
+            </div>
+            <div class="venue-qr-wrap">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=4a2c35&bgcolor=fdf6ec&data=https://maps.google.com/?q=Zion+Parish+Hall+Pudukad+Thrissur+Kerala"
+                alt="Map QR – Zion Parish Hall"
+                loading="lazy"
+              />
+              <span>Get Directions</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Countdown -->
+    <hr class="event-divider" />
+
+    <!-- EVENT 2: WEDDING -->
+    <div class="event-block fade-in delay-3">
+      <div class="event-block-label">Holy Matrimony</div>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-card-icon">📅</div>
+          <div class="detail-card-label">Date</div>
+          <div class="detail-card-value">Sunday<br/>19 April 2026</div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-card-icon">⏰</div>
+          <div class="detail-card-label">Time</div>
+          <div class="detail-card-value">10:10 AM</div>
+        </div>
+        <div class="detail-card full">
+          <div class="detail-card-label">📍 Cathedral</div>
+          <div class="venue-qr-row">
+            <div class="venue-text">
+              <div class="detail-card-value">Marth Mariam Cathedral Church<br/>Thrissur</div>
+            </div>
+            <div class="venue-qr-wrap">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=4a2c35&bgcolor=fdf6ec&data=https://maps.google.com/?q=Marth+Mariam+Cathedral+Church+Thrissur+Kerala"
+                alt="Map QR – Marth Mariam Cathedral"
+                loading="lazy"
+              />
+              <span>Get Directions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown to Engagement -->
     <div class="countdown-bar fade-in delay-4" id="countdown-bar">
       <div class="countdown-unit"><div class="countdown-num" id="cd-days">--</div><div class="countdown-lbl">Days</div></div>
       <div class="countdown-sep">:</div>
@@ -728,8 +818,9 @@
       <div class="countdown-sep">:</div>
       <div class="countdown-unit"><div class="countdown-num" id="cd-sec">--</div><div class="countdown-lbl">Sec</div></div>
     </div>
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.45);margin-top:8px;" class="fade-in delay-4">Until the Engagement</div>
 
-    <a class="scroll-arrow" href="#section-story" aria-label="Scroll to our story" style="--gold:#c9a84c;">
+    <a class="scroll-arrow" href="#section-story" aria-label="Scroll to families">
       <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="18" cy="18" r="17" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.15)"/>
         <path d="M11 15l7 7 7-7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -738,57 +829,52 @@
     </a>
   </section>
 
-  <!-- ── SECTION 3: OUR STORY ── -->
+  <!-- ── SECTION 3: FAMILIES ── -->
   <section id="section-story">
 
-    <p class="section-tag fade-in" style="color:var(--rose);">Our Love Story</p>
-    <h2 class="section-title fade-in delay-1" style="color:var(--deep);font-size:clamp(36px,10vw,56px);">How It Began</h2>
+    <p class="section-tag fade-in" style="color:var(--rose);">Two Families, One Blessing</p>
+    <h2 class="section-title fade-in delay-1" style="color:var(--deep);font-size:clamp(36px,10vw,56px);">United in Grace</h2>
 
-    <div class="story-cards">
-      <div class="story-card fade-in delay-1">
-        <div class="story-card-img">
-          <div class="story-card-img-inner" style="background:linear-gradient(135deg,#f9ddd0,#f5c6c6);">☕</div>
-        </div>
-        <div class="story-card-body">
-          <div class="story-card-year">2020 · First Meeting</div>
-          <div class="story-card-title">A Coffee & A Smile</div>
-          <div class="story-card-text">We met at a little café on a rainy Sunday. James spilled his coffee and Sarah laughed — the rest is history.</div>
-        </div>
+    <!-- Bride -->
+    <div class="family-card fade-in delay-2">
+      <div class="family-card-role">The Bride</div>
+      <div class="family-card-name">Rosemary Antony</div>
+      <div class="family-card-parents">
+        D/o. Mr. Antony P V &amp; Mrs. Mini Antony
       </div>
-
-      <div class="story-card fade-in delay-2">
-        <div class="story-card-img">
-          <div class="story-card-img-inner" style="background:linear-gradient(135deg,#e8d5a3,#f0d9c8);">🌙</div>
-        </div>
-        <div class="story-card-body">
-          <div class="story-card-year">2022 · First Date</div>
-          <div class="story-card-title">Under the Stars</div>
-          <div class="story-card-text">A rooftop dinner, fairy lights, and a playlist that still makes Sarah cry. James knew she was the one.</div>
-        </div>
-      </div>
-
-      <div class="story-card fade-in delay-3">
-        <div class="story-card-img">
-          <div class="story-card-img-inner" style="background:linear-gradient(135deg,#d4e8d0,#b8ddb8);">💍</div>
-        </div>
-        <div class="story-card-body">
-          <div class="story-card-year">2024 · Engagement</div>
-          <div class="story-card-title">She Said Yes!</div>
-          <div class="story-card-text">James proposed at the same café where they first met. Sarah didn't even hesitate for a second.</div>
-        </div>
-      </div>
+      <div class="family-card-address">Pallipadan House, Pudukad P.O, Thrissur</div>
     </div>
 
-    <a class="scroll-arrow" href="#section-rsvp" aria-label="Scroll to RSVP" style="bottom:24px;">
+    <div class="family-connector fade-in delay-2">
+      <hr/><span>&amp;</span><hr/>
+    </div>
+
+    <!-- Groom -->
+    <div class="family-card fade-in delay-3">
+      <div class="family-card-role">The Groom</div>
+      <div class="family-card-name">Ittymathew Paul</div>
+      <div class="family-card-parents">
+        S/o. Mr. Paul Mathews &amp; Mrs. Neena Paul
+      </div>
+      <div class="family-card-address">Eluvathingal Parapukara House, Ollukara P.O, Thrissur</div>
+    </div>
+
+    <div class="invite-text fade-in delay-4" style="margin-top:28px;">
+      We joyfully invite you with your family<br/>
+      to share in the blessings of this union<br/>
+      <span style="color:var(--gold);font-style:normal;letter-spacing:1px;">— By the Grace of God —</span>
+    </div>
+
+    <a class="scroll-arrow" href="#section-rsvp" aria-label="Scroll to closing">
       <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="18" cy="18" r="17" stroke="#c97b8a" stroke-width="1.5" fill="rgba(201,123,138,0.1)"/>
         <path d="M11 15l7 7 7-7" stroke="#c97b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span style="color:#c97b8a;">RSVP</span>
+      <span style="color:#c97b8a;">Blessings</span>
     </a>
   </section>
 
-  <!-- ── SECTION 4: RSVP ── -->
+  <!-- ── SECTION 4: CLOSING / BLESSINGS ── -->
   <section id="section-rsvp">
 
     <!-- Floral decoration -->
@@ -803,38 +889,29 @@
       <ellipse cx="55" cy="145" rx="8" ry="22" fill="#a0c8a0" opacity="0.6" transform="rotate(20 55 145)"/>
     </svg>
 
-    <p class="section-tag fade-in" style="color:var(--gold-light);">Join Us</p>
-    <h2 class="section-title fade-in delay-1" style="color:var(--cream);">RSVP</h2>
+    <p class="section-tag fade-in" style="color:var(--gold-light);">With Joy &amp; Love</p>
+    <h2 class="section-title fade-in delay-1" style="color:var(--cream);">God's Blessings</h2>
 
-    <div class="rsvp-card fade-in delay-2">
-      <p style="font-size:clamp(13px,3.5vw,15px);color:rgba(253,246,236,0.7);letter-spacing:1px;">Please respond by <strong style="color:var(--gold);">October 15, 2025</strong></p>
+    <div class="blessing-card fade-in delay-2">
+      <div class="blessing-cross">✝</div>
+      <div class="blessing-text">
+        Your presence and prayers will make<br/>
+        this occasion truly special and blessed.<br/>
+        We look forward to celebrating<br/>
+        this joyous occasion with you.
+      </div>
 
-      <form class="rsvp-form" id="rsvp-form" onsubmit="submitRSVP(event)">
-        <input class="rsvp-input" type="text" placeholder="Your Full Name" required />
-        <input class="rsvp-input" type="email" placeholder="Email Address" required />
-        <input class="rsvp-input" type="number" min="1" max="5" placeholder="Number of Guests (max 5)" required />
+      <div style="border-top:1px solid rgba(201,168,76,0.2);margin:20px 0;"></div>
 
-        <div class="rsvp-radio-group" id="rsvp-attend">
-          <button type="button" class="rsvp-radio-btn active" onclick="selectAttend(this,'yes')">✓ Attending</button>
-          <button type="button" class="rsvp-radio-btn" onclick="selectAttend(this,'no')">✗ Regrets</button>
-        </div>
-
-        <textarea class="rsvp-input" rows="3" placeholder="Any dietary restrictions or message for the couple?" style="resize:none;"></textarea>
-
-        <button type="submit" class="rsvp-submit">Send RSVP ♥</button>
-      </form>
-
-      <div class="rsvp-success" id="rsvp-success">
-        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="30" cy="30" r="28" fill="rgba(201,168,76,0.2)" stroke="#c9a84c" stroke-width="1.5"/>
-          <path d="M18 30l8 8 16-16" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Thank You!</h3>
-        <p>We can't wait to celebrate with you.</p>
+      <div class="sharing-label">Sharing Happiness With</div>
+      <div class="sharing-names">
+        Lidiya, Jobi &amp; Mikhael
       </div>
     </div>
 
-    <p class="footer-note">Sarah & James · November 2025 · Made with ♥</p>
+    <p class="footer-note">
+      Rosemary &amp; Ittymathew · April 2026 · Made with ♥
+    </p>
   </section>
 
 </div><!-- /main-content -->
@@ -861,19 +938,16 @@
   }
 
   /* ─── ENVELOPE OPEN ─── */
-  const envelope   = document.getElementById('envelope');
-  const envScreen  = document.getElementById('envelope-screen');
-  const mainCont   = document.getElementById('main-content');
+  const envelope  = document.getElementById('envelope');
+  const envScreen = document.getElementById('envelope-screen');
+  const mainCont  = document.getElementById('main-content');
 
   function openEnvelope() {
     if (envelope.classList.contains('opening')) return;
     envelope.classList.add('opening');
-
-    // After card slides up, reveal main content
     setTimeout(() => {
       envScreen.classList.add('hidden');
       mainCont.classList.add('visible');
-      // Trigger first section fade-ins
       triggerFadeIns();
     }, 1400);
   }
@@ -890,21 +964,16 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
-
+    }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   }
 
-  /* ─── COUNTDOWN ─── */
-  const weddingDate = new Date('2025-11-15T16:00:00');
+  /* ─── COUNTDOWN to Engagement: 11 April 2026, 11:30 AM ─── */
+  const engagementDate = new Date('2026-04-11T11:30:00');
   function updateCountdown() {
-    const now  = new Date();
-    const diff = weddingDate - now;
+    const diff = engagementDate - new Date();
     if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
-      document.getElementById('cd-hrs').textContent  = '00';
-      document.getElementById('cd-min').textContent  = '00';
-      document.getElementById('cd-sec').textContent  = '00';
+      ['cd-days','cd-hrs','cd-min','cd-sec'].forEach(id => document.getElementById(id).textContent = '00');
       return;
     }
     const days = Math.floor(diff / 86400000);
@@ -918,18 +987,6 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
-
-  /* ─── RSVP ─── */
-  function selectAttend(btn, val) {
-    document.querySelectorAll('.rsvp-radio-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
-
-  function submitRSVP(e) {
-    e.preventDefault();
-    document.getElementById('rsvp-form').style.display = 'none';
-    document.getElementById('rsvp-success').classList.add('show');
-  }
 </script>
 </body>
 </html>
