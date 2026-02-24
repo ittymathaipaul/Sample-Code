@@ -46,7 +46,7 @@
     #envelope-screen {
       position: fixed; inset: 0; z-index: 1000;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: radial-gradient(ellipse at center, #fdf0e4 0%, #f0d9c8 60%, #e2c4ae 100%);
+      background: radial-gradient(ellipse at center, #7a2535 0%, #55111e 55%, #380a12 100%);
       transition: opacity 0.8s ease, visibility 0.8s ease;
     }
     #envelope-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -83,8 +83,8 @@
     .opening .wax-seal { opacity: 0; }
     .invite-label { margin-top: 50px; text-align: center; animation: pulseLabel 2s ease-in-out infinite; position: relative; z-index: 2; }
     @keyframes pulseLabel { 0%,100% { opacity:1; transform:translateY(0); } 50% { opacity:0.6; transform:translateY(-4px); } }
-    .invite-label h2 { font-family: 'Great Vibes', cursive; font-size: clamp(28px,8vw,42px); color: var(--deep); line-height: 1; }
-    .invite-label p { font-size: clamp(11px,3vw,13px); letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+    .invite-label h2 { font-family: 'Great Vibes', cursive; font-size: clamp(28px,8vw,42px); color: var(--gold-light); line-height: 1; }
+    .invite-label p { font-size: clamp(11px,3vw,13px); letter-spacing: 3px; text-transform: uppercase; color: rgba(232,213,163,0.75); margin-top: 8px; }
 
     /* ══ MAIN CONTENT ══ */
     #main-content { opacity: 0; visibility: hidden; transition: opacity 1s ease 0.4s, visibility 0s linear 1.4s; }
@@ -203,8 +203,8 @@
 <!-- ENVELOPE SCREEN -->
 <div id="envelope-screen">
   <div id="petals"></div>
-  <img src="images/1-removebg-preview.png" alt="" style="position:absolute;top:0;left:0;width:clamp(100px,26vw,140px);opacity:0.6;pointer-events:none;z-index:0;" loading="lazy"/>
-  <img src="images/2-removebg-preview.png" alt="" style="position:absolute;bottom:0;right:0;width:clamp(100px,26vw,140px);opacity:0.6;pointer-events:none;z-index:0;transform:scaleX(-1);" loading="lazy"/>
+  <img src="images/1-removebg-preview.png" alt="" style="position:absolute;top:0;left:0;width:clamp(100px,26vw,140px);opacity:0.5;pointer-events:none;z-index:0;" loading="lazy"/>
+  <img src="images/1-removebg-preview.png" alt="" style="position:absolute;bottom:0;right:0;width:clamp(100px,26vw,140px);opacity:0.5;pointer-events:none;z-index:0;transform:rotate(180deg);" loading="lazy"/>
 
   <div class="invite-label">
     <h2>You're Invited</h2>
