@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- Stems & vines -->
+  <path d="M10 290 Q40 200 80 160 Q120 120 160 80 Q200 40 290 10" stroke="#7a9e6a" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M10 290 Q50 230 90 200 Q130 170 180 130" stroke="#7a9e6a" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M10 290 Q30 260 50 240 Q80 210 120 180 Q160 150 200 100 Q230 65 290 10" stroke="#5a7a4a" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- Leaves -->
+  <ellipse cx="60" cy="220" rx="18" ry="8" fill="#7a9e6a" opacity="0.65" transform="rotate(-40 60 220)"/>
+  <ellipse cx="85" cy="195" rx="15" ry="6" fill="#8aae7a" opacity="0.55" transform="rotate(-55 85 195)"/>
+  <ellipse cx="120" cy="160" rx="20" ry="8" fill="#7a9e6a" opacity="0.6" transform="rotate(-50 120 160)"/>
+  <ellipse cx="155" cy="125" rx="16" ry="6" fill="#8aae7a" opacity="0.55" transform="rotate(-45 155 125)"/>
+  <ellipse cx="195" cy="85" rx="18" ry="7" fill="#7a9e6a" opacity="0.6" transform="rotate(-40 195 85)"/>
+  <ellipse cx="240" cy="50" rx="14" ry="5" fill="#8aae7a" opacity="0.5" transform="rotate(-30 240 50)"/>
+  <ellipse cx="40" cy="245" rx="14" ry="5" fill="#8aae7a" opacity="0.5" transform="rotate(-60 40 245)"/>
+  <ellipse cx="170" cy="108" rx="12" ry="5" fill="#6a8e5a" opacity="0.45" transform="rotate(30 170 108)"/>
+  <ellipse cx="210" cy="68" rx="14" ry="5" fill="#7a9e6a" opacity="0.5" transform="rotate(20 210 68)"/>
+
+  <!-- Large Rose 1 – bottom left, deep rose -->
+  <g transform="translate(30,255)">
+    <circle cx="0" cy="0" r="22" fill="#c97b8a" opacity="0.9"/>
+    <circle cx="0" cy="0" r="15" fill="#d48a96" opacity="0.85"/>
+    <circle cx="0" cy="0" r="9" fill="#e0a0aa" opacity="0.8"/>
+    <circle cx="0" cy="0" r="5" fill="#f0c0c5" opacity="0.75"/>
+    <!-- petals -->
+    <ellipse cx="0" cy="-20" rx="8" ry="12" fill="#c97b8a" opacity="0.7"/>
+    <ellipse cx="0" cy="20" rx="8" ry="12" fill="#c97b8a" opacity="0.7"/>
+    <ellipse cx="-20" cy="0" rx="12" ry="8" fill="#c97b8a" opacity="0.7"/>
+    <ellipse cx="20" cy="0" rx="12" ry="8" fill="#c97b8a" opacity="0.7"/>
+    <ellipse cx="-14" cy="-14" rx="8" ry="11" fill="#d48a96" opacity="0.6" transform="rotate(-45 -14 -14)"/>
+    <ellipse cx="14" cy="-14" rx="8" ry="11" fill="#d48a96" opacity="0.6" transform="rotate(45 14 -14)"/>
+    <ellipse cx="-14" cy="14" rx="8" ry="11" fill="#d48a96" opacity="0.6" transform="rotate(45 -14 14)"/>
+    <ellipse cx="14" cy="14" rx="8" ry="11" fill="#d48a96" opacity="0.6" transform="rotate(-45 14 14)"/>
+  </g>
+
+  <!-- Large Rose 2 – mid diagonal, gold/cream -->
+  <g transform="translate(145,145)">
+    <circle cx="0" cy="0" r="18" fill="#c9a84c" opacity="0.85"/>
+    <circle cx="0" cy="0" r="12" fill="#d4b870" opacity="0.8"/>
+    <circle cx="0" cy="0" r="7" fill="#e8d5a3" opacity="0.75"/>
+    <circle cx="0" cy="0" r="4" fill="#f5eccc" opacity="0.7"/>
+    <ellipse cx="0" cy="-16" rx="7" ry="10" fill="#c9a84c" opacity="0.65"/>
+    <ellipse cx="0" cy="16" rx="7" ry="10" fill="#c9a84c" opacity="0.65"/>
+    <ellipse cx="-16" cy="0" rx="10" ry="7" fill="#c9a84c" opacity="0.65"/>
+    <ellipse cx="16" cy="0" rx="10" ry="7" fill="#c9a84c" opacity="0.65"/>
+    <ellipse cx="-11" cy="-11" rx="7" ry="9" fill="#d4b870" opacity="0.55" transform="rotate(-45 -11 -11)"/>
+    <ellipse cx="11" cy="-11" rx="7" ry="9" fill="#d4b870" opacity="0.55" transform="rotate(45 11 -11)"/>
+    <ellipse cx="-11" cy="11" rx="7" ry="9" fill="#d4b870" opacity="0.55" transform="rotate(45 -11 11)"/>
+    <ellipse cx="11" cy="11" rx="7" ry="9" fill="#d4b870" opacity="0.55" transform="rotate(-45 11 11)"/>
+  </g>
+
+  <!-- Large Rose 3 – top right, blush -->
+  <g transform="translate(255,30)">
+    <circle cx="0" cy="0" r="22" fill="#e8a0b0" opacity="0.85"/>
+    <circle cx="0" cy="0" r="15" fill="#f0b8c0" opacity="0.8"/>
+    <circle cx="0" cy="0" r="9" fill="#f8d0d5" opacity="0.75"/>
+    <circle cx="0" cy="0" r="5" fill="#fce4e8" opacity="0.7"/>
+    <ellipse cx="0" cy="-20" rx="8" ry="12" fill="#e8a0b0" opacity="0.65"/>
+    <ellipse cx="0" cy="20" rx="8" ry="12" fill="#e8a0b0" opacity="0.65"/>
+    <ellipse cx="-20" cy="0" rx="12" ry="8" fill="#e8a0b0" opacity="0.65"/>
+    <ellipse cx="20" cy="0" rx="12" ry="8" fill="#e8a0b0" opacity="0.65"/>
+    <ellipse cx="-14" cy="-14" rx="8" ry="11" fill="#f0b8c0" opacity="0.55" transform="rotate(-45 -14 -14)"/>
+    <ellipse cx="14" cy="-14" rx="8" ry="11" fill="#f0b8c0" opacity="0.55" transform="rotate(45 14 -14)"/>
+    <ellipse cx="-14" cy="14" rx="8" ry="11" fill="#f0b8c0" opacity="0.55" transform="rotate(45 -14 14)"/>
+    <ellipse cx="14" cy="14" rx="8" ry="11" fill="#f0b8c0" opacity="0.55" transform="rotate(-45 14 14)"/>
+  </g>
+
+  <!-- Small buds scattered -->
+  <g transform="translate(90,195)">
+    <circle cx="0" cy="0" r="9" fill="#c97b8a" opacity="0.7"/>
+    <circle cx="0" cy="0" r="5" fill="#e0a0aa" opacity="0.65"/>
+    <ellipse cx="0" cy="-8" rx="4" ry="6" fill="#c97b8a" opacity="0.5"/>
+    <ellipse cx="0" cy="8" rx="4" ry="6" fill="#c97b8a" opacity="0.5"/>
+    <ellipse cx="-8" cy="0" rx="6" ry="4" fill="#c97b8a" opacity="0.5"/>
+    <ellipse cx="8" cy="0" rx="6" ry="4" fill="#c97b8a" opacity="0.5"/>
+  </g>
+  <g transform="translate(205,95)">
+    <circle cx="0" cy="0" r="10" fill="#c9a84c" opacity="0.7"/>
+    <circle cx="0" cy="0" r="6" fill="#e8d5a3" opacity="0.65"/>
+    <ellipse cx="0" cy="-9" rx="4" ry="6" fill="#c9a84c" opacity="0.5"/>
+    <ellipse cx="0" cy="9" rx="4" ry="6" fill="#c9a84c" opacity="0.5"/>
+    <ellipse cx="-9" cy="0" rx="6" ry="4" fill="#c9a84c" opacity="0.5"/>
+    <ellipse cx="9" cy="0" rx="6" ry="4" fill="#c9a84c" opacity="0.5"/>
+  </g>
+  <g transform="translate(50,240)">
+    <circle cx="0" cy="0" r="7" fill="#e8a0b0" opacity="0.65"/>
+    <circle cx="0" cy="0" r="4" fill="#fce4e8" opacity="0.6"/>
+  </g>
+  <g transform="translate(180,60)">
+    <circle cx="0" cy="0" r="8" fill="#c97b8a" opacity="0.6"/>
+    <circle cx="0" cy="0" r="4" fill="#f8d0d5" opacity="0.55"/>
+  </g>
+
+  <!-- Tiny dots -->
+  <circle cx="110" cy="175" r="3" fill="#c9a84c" opacity="0.5"/>
+  <circle cx="130" cy="155" r="2.5" fill="#c97b8a" opacity="0.45"/>
+  <circle cx="70" cy="215" r="2.5" fill="#e8a0b0" opacity="0.45"/>
+  <circle cx="225" cy="40" r="3" fill="#c9a84c" opacity="0.45"/>
+  <circle cx="165" cy="95" r="2" fill="#c97b8a" opacity="0.4"/>
+</svg>
