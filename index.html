@@ -69,14 +69,17 @@
       10%  { opacity: 0.7; } 90%  { opacity: 0.4; }
       100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
     }
+    .envelope-outer {
+      filter: drop-shadow(0 20px 40px rgba(74,44,53,0.25));
+      transition: transform 0.3s ease; cursor: pointer;
+    }
+    .envelope-outer:hover { transform: scale(1.03); }
+    .envelope-outer:active { transform: scale(0.97); }
     .envelope-wrapper {
-      position: relative; width: min(400px, 92vw); cursor: pointer;
+      position: relative; width: min(400px, 92vw);
       perspective: 900px; overflow: hidden;
-      filter: drop-shadow(0 20px 40px rgba(74,44,53,0.25)); transition: transform 0.3s ease;
     }
     .envelope-wrapper.opening { overflow: visible; }
-    .envelope-wrapper:hover { transform: scale(1.03); }
-    .envelope-wrapper:active { transform: scale(0.97); }
     .env-body { width: 100%; display: block; }
 
     /* Flap: separate absolutely-positioned div for proper 3D rotation */
@@ -305,6 +308,7 @@
     <p>Tap to open</p>
   </div>
 
+  <div class="envelope-outer">
   <div class="envelope-wrapper" id="envelope" role="button" aria-label="Open invitation" tabindex="0">
     <div class="env-card">
       <div class="env-card-inner">
@@ -352,6 +356,7 @@
         <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
       </svg>
     </div>
+  </div>
   </div>
 </div>
 
