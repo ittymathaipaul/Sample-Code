@@ -96,19 +96,20 @@
     }
 
     .env-card {
-      position: absolute; left: 50%; bottom: 28%;
-      transform: translateX(-50%) translateY(80%);
-      width: 70%; background: var(--cream); border: 1.5px solid var(--gold-light);
+      position: absolute; left: 50%; top: 50%;
+      transform: translateX(-50%) translateY(40%);
+      width: 75%; background: var(--cream); border: 1.5px solid var(--gold-light);
       border-radius: 6px; padding: 18px 14px; text-align: center;
-      opacity: 0; z-index: 2; box-shadow: 0 8px 32px rgba(74,44,53,0.22);
+      opacity: 0; z-index: 6; box-shadow: 0 8px 32px rgba(74,44,53,0.22);
     }
-    .opening .env-card { animation: cardRise 1.4s cubic-bezier(0.34,1.56,0.64,1) 0.75s both; z-index: 4; }
+    .opening .env-card { animation: cardRise 1.5s ease-out 0.7s both; }
     @keyframes cardRise {
-      0%   { transform: translateX(-50%) translateY(80%); opacity: 0; }
+      0%   { transform: translateX(-50%) translateY(40%); opacity: 0; }
       20%  { opacity: 1; }
-      75%  { transform: translateX(-50%) translateY(-62%); }
-      88%  { transform: translateX(-50%) translateY(-52%); }
-      100% { transform: translateX(-50%) translateY(-56%); }
+      65%  { transform: translateX(-50%) translateY(-215%); }
+      80%  { transform: translateX(-50%) translateY(-185%); }
+      90%  { transform: translateX(-50%) translateY(-205%); }
+      100% { transform: translateX(-50%) translateY(-200%); }
     }
     .env-card-inner { font-family: 'Great Vibes', cursive; color: var(--deep); font-size: clamp(14px,4vw,18px); line-height: 1.5; }
     .env-card-inner small { font-family: 'Cormorant Garamond', serif; font-size: clamp(9px,2.5vw,11px); letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-top: 6px; }
@@ -117,14 +118,13 @@
     .wax-seal {
       position: absolute; top: 55%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 80px; height: 80px; object-fit: contain;
+      width: 120px; height: 120px; object-fit: contain;
       z-index: 5; transition: opacity 0.4s ease;
     }
     .opening .wax-seal { opacity: 0; }
 
-    .invite-label { margin-top: 50px; text-align: center; animation: pulseLabel 2s ease-in-out infinite; position: relative; z-index: 2; transition: opacity 0.4s ease; }
+    .invite-label { margin-top: 50px; text-align: center; animation: pulseLabel 2s ease-in-out infinite; position: relative; z-index: 2; transition: opacity 0.5s ease; }
     @keyframes pulseLabel { 0%,100% { opacity:1; transform:translateY(0); } 50% { opacity:0.6; transform:translateY(-4px); } }
-    .opening .invite-label { opacity: 0; pointer-events: none; animation: none; }
     .invite-label h2 { font-family: 'Great Vibes', cursive; font-size: clamp(28px,8vw,42px); color: var(--deep); line-height: 1; }
     .invite-label p { font-size: clamp(11px,3vw,13px); letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
 
@@ -429,50 +429,13 @@
       </div>
     </div>
 
-    <button class="scroll-arrow" data-target="section-rsvp" aria-label="Next section">
+    <button class="scroll-arrow" data-target="section-matrimony" aria-label="Next section">
       <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="#c97b8a" stroke-width="1.5" fill="rgba(201,123,138,0.1)"/><path d="M11 15l7 7 7-7" stroke="#c97b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span style="color:#c97b8a;">Next</span>
     </button>
   </section>
 
-  <!-- SECTION 4: BLESSINGS -->
-  <section id="section-rsvp">
-    <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="top:0;right:0;width:clamp(130px,34vw,180px);opacity:0.45;transform:scaleX(-1);" loading="lazy"/>
-    <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="bottom:0;left:0;width:clamp(130px,34vw,180px);opacity:0.45;transform:scaleY(-1);" loading="lazy"/>
-
-    <div class="section-content">
-      <p class="section-tag fade-in" style="color:var(--gold-light);">With Joy &amp; Love</p>
-      <h2 class="section-title fade-in delay-1" style="color:var(--cream);">God's Blessings</h2>
-      <div class="blessing-cross fade-in delay-2">✝</div>
-      <div class="blessing-text fade-in delay-2">
-        Your presence and prayers will make<br/>
-        this occasion truly special and blessed.<br/>
-        We look forward to celebrating<br/>
-        this joyous occasion with you.
-      </div>
-      <div style="border-top:1px solid rgba(201,168,76,0.2);margin:14px 0;width:100%;"></div>
-
-      <!-- Holy Matrimony notice above sharing happiness -->
-      <div class="section-tag fade-in delay-3" style="color:var(--gold-light);margin-bottom:4px;">✝ Holy Matrimony — For Your Prayers</div>
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(12px,3vw,14px);color:var(--cream);line-height:1.5;margin-bottom:2px;" class="fade-in delay-3">
-        Marth Mariam Cathedral Church<br/>Thrissur
-      </div>
-      <div style="font-size:clamp(11px,2.8vw,13px);color:var(--gold-light);letter-spacing:0.5px;margin-bottom:12px;" class="fade-in delay-3">
-        Sunday, 19 April 2026 &nbsp;·&nbsp; 10:10 AM
-      </div>
-
-      <div style="border-top:1px solid rgba(201,168,76,0.2);margin:4px 0 10px;width:100%;"></div>
-      <div class="sharing-label fade-in delay-3">Sharing Happiness With</div>
-      <div class="sharing-names fade-in delay-3">Lidiya, Jobi &amp; Mikhael</div>
-    </div>
-
-    <button class="scroll-arrow" data-target="section-matrimony" aria-label="Next section">
-      <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/><path d="M11 15l7 7 7-7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="color:var(--gold);">Next</span>
-    </button>
-  </section>
-
-  <!-- SECTION 5: HOLY MATRIMONY (last page) -->
+  <!-- SECTION 4: HOLY MATRIMONY -->
   <section id="section-matrimony">
     <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="top:0;left:0;width:clamp(130px,34vw,180px);opacity:0.35;" loading="lazy"/>
     <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="bottom:0;right:0;width:clamp(130px,34vw,180px);opacity:0.35;transform:rotate(180deg);" loading="lazy"/>
@@ -495,6 +458,32 @@
       <div class="matrimony-closing fade-in delay-4">
         We request your blessings<br/>and prayers for the couple
       </div>
+    </div>
+
+    <button class="scroll-arrow" data-target="section-rsvp" aria-label="Next section">
+      <svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="#c9a84c" stroke-width="1.5" fill="rgba(201,168,76,0.1)"/><path d="M11 15l7 7 7-7" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="color:var(--gold);">Next</span>
+    </button>
+  </section>
+
+  <!-- SECTION 5: BLESSINGS (last page) -->
+  <section id="section-rsvp">
+    <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="top:0;right:0;width:clamp(130px,34vw,180px);opacity:0.45;transform:scaleX(-1);" loading="lazy"/>
+    <img src="images/1-removebg-preview.png" alt="" class="floral-corner-img" style="bottom:0;left:0;width:clamp(130px,34vw,180px);opacity:0.45;transform:scaleY(-1);" loading="lazy"/>
+
+    <div class="section-content">
+      <p class="section-tag fade-in" style="color:var(--gold-light);">With Joy &amp; Love</p>
+      <h2 class="section-title fade-in delay-1" style="color:var(--cream);">God's Blessings</h2>
+      <div class="blessing-cross fade-in delay-2">✝</div>
+      <div class="blessing-text fade-in delay-2">
+        Your presence and prayers will make<br/>
+        this occasion truly special and blessed.<br/>
+        We look forward to celebrating<br/>
+        this joyous occasion with you.
+      </div>
+      <div style="border-top:1px solid rgba(201,168,76,0.2);margin:14px 0;width:100%;"></div>
+      <div class="sharing-label fade-in delay-3">Sharing Happiness With</div>
+      <div class="sharing-names fade-in delay-3">Lidiya, Jobi &amp; Mikhael</div>
     </div>
 
     <p class="wedding-footer">Rosemary &amp; Ittymathew · 19 April 2026</p>
@@ -521,6 +510,13 @@
   function openEnvelope() {
     if (envelope.classList.contains('opening')) return;
     envelope.classList.add('opening');
+    /* Fade out "You're Invited / Tap to open" label immediately */
+    const inviteLabel = document.querySelector('.invite-label');
+    if (inviteLabel) {
+      inviteLabel.style.opacity = '0';
+      inviteLabel.style.pointerEvents = 'none';
+      inviteLabel.style.animation = 'none';
+    }
     /* 3 s delay before revealing main content */
     setTimeout(() => {
       envScreen.classList.add('hidden');
