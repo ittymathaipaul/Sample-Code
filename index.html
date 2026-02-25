@@ -336,9 +336,9 @@
       <g filter="url(#roughEnv)">
         <rect x="0" y="0" width="320" height="200" rx="20" fill="#8b1a2a"/>
         <polygon points="0,20 160,120 320,20" fill="#7a1522"/>
-        <polygon points="0,20 0,200 160,120" fill="#6b1020"/>
-        <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
-        <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+        <path d="M 0,20 L 0,180 A 20,20 0 0,1 20,200 L 160,120 Z" fill="#6b1020"/>
+        <path d="M 320,20 L 320,180 A 20,20 0 0,1 300,200 L 160,120 Z" fill="#6b1020"/>
+        <path d="M 0,180 A 20,20 0 0,1 20,200 L 300,200 A 20,20 0 0,1 320,180 L 160,120 Z" fill="#7a1522"/>
       </g>
       <rect x="0" y="0" width="320" height="200" rx="20" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
       <rect x="6" y="6" width="308" height="188" rx="17" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
@@ -360,9 +360,9 @@
             <feBlend in="SourceGraphic" in2="clipped" mode="multiply"/>
           </filter>
         </defs>
-        <polygon points="0,20 160,110 320,20 320,0 0,0" fill="#a02030" filter="url(#roughFlap)"/>
+        <path d="M 20,0 L 300,0 A 20,20 0 0,1 320,20 L 160,110 L 0,20 A 20,20 0 0,1 20,0 Z" fill="#a02030" filter="url(#roughFlap)"/>
         <polyline points="0,20 160,110 320,20" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
-        <line x1="0" y1="0" x2="320" y2="0" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="20" y1="0" x2="300" y2="0" stroke="#c9a84c" stroke-width="1.5"/>
       </svg>
     </div>
 
@@ -385,9 +385,9 @@
           </filter>
         </defs>
         <g filter="url(#roughPocket)">
-          <polygon points="0,20 0,200 160,120"   fill="#6b1020"/>
-          <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
-          <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+          <path d="M 0,20 L 0,180 A 20,20 0 0,1 20,200 L 160,120 Z" fill="#6b1020"/>
+          <path d="M 320,20 L 320,180 A 20,20 0 0,1 300,200 L 160,120 Z" fill="#6b1020"/>
+          <path d="M 0,180 A 20,20 0 0,1 20,200 L 300,200 A 20,20 0 0,1 320,180 L 160,120 Z" fill="#7a1522"/>
         </g>
       </svg>
     </div>
