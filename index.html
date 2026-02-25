@@ -71,9 +71,10 @@
     }
     .envelope-wrapper {
       position: relative; width: min(400px, 92vw); cursor: pointer;
-      perspective: 900px;
+      perspective: 900px; overflow: hidden;
       filter: drop-shadow(0 20px 40px rgba(74,44,53,0.25)); transition: transform 0.3s ease;
     }
+    .envelope-wrapper.opening { overflow: visible; }
     .envelope-wrapper:hover { transform: scale(1.03); }
     .envelope-wrapper:active { transform: scale(0.97); }
     .env-body { width: 100%; display: block; }
