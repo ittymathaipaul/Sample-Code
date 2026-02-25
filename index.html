@@ -97,29 +97,27 @@
 
     .env-card {
       position: absolute; left: 50%; top: 50%;
-      transform: translateX(-50%) translateY(40%);
+      transform: translateX(-50%) translateY(17%);
       width: 84%; background: var(--cream); border: 1.5px solid var(--gold-light);
-      border-radius: 8px; padding: 28px 20px 30px; text-align: center;
+      border-radius: 8px; padding: 22px 20px 24px; text-align: center;
       opacity: 0; z-index: 6; box-shadow: 0 8px 32px rgba(74,44,53,0.22);
     }
     .opening .env-card { animation: cardRise 1.5s ease-out 0.7s both; }
     @keyframes cardRise {
-      0%   { transform: translateX(-50%) translateY(40%); opacity: 0; }
+      0%   { transform: translateX(-50%) translateY(17%); opacity: 0; }
       20%  { opacity: 1; }
-      65%  { transform: translateX(-50%) translateY(-145%); opacity: 1; }
-      80%  { transform: translateX(-50%) translateY(-125%); opacity: 1; }
-      90%  { transform: translateX(-50%) translateY(-138%); opacity: 1; }
-      100% { transform: translateX(-50%) translateY(-133%); opacity: 1; }
+      65%  { transform: translateX(-50%) translateY(-115%); opacity: 1; }
+      80%  { transform: translateX(-50%) translateY(-90%);  opacity: 1; }
+      90%  { transform: translateX(-50%) translateY(-108%); opacity: 1; }
+      100% { transform: translateX(-50%) translateY(-100%); opacity: 1; }
     }
     .env-card-inner { color: var(--deep); }
     .env-card-tag  { font-family: 'Cormorant Garamond', serif; font-size: clamp(10px,2.8vw,12px); letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .env-card-names { font-family: 'Great Vibes', cursive; font-size: clamp(26px,7.5vw,36px); line-height: 1.2; color: var(--deep); }
     .env-card-amp  { font-family: 'Great Vibes', cursive; font-size: clamp(18px,5vw,24px); color: var(--gold); display: block; margin: 2px 0; }
-    .env-card-divider { display: flex; align-items: center; gap: 8px; margin: 10px auto; width: 80%; }
+    .env-card-divider { display: flex; align-items: center; gap: 8px; margin: 8px auto; width: 80%; }
     .env-card-divider hr { flex:1; border:none; border-top:1px solid var(--gold-light); }
-    .env-card-event { font-family: 'Cormorant Garamond', serif; font-size: clamp(11px,3vw,13px); letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .env-card-date  { font-family: 'Playfair Display', serif; font-size: clamp(13px,3.5vw,15px); color: var(--deep); line-height: 1.6; }
-    .env-card-venue { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(11px,3vw,13px); color: var(--rose); margin-top: 6px; line-height: 1.5; }
+    .env-card-event { font-family: 'Cormorant Garamond', serif; font-size: clamp(11px,3vw,13px); letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
 
     /* Wax seal: PNG with SVG fallback */
     .wax-seal {
@@ -222,6 +220,7 @@
     }
     .venue-qr-link:hover { opacity: 0.8; }
     .venue-qr-link img { width: 64px; height: 64px; border-radius: 8px; border: 2px solid rgba(201,168,76,0.5); background: white; padding: 3px; display: block; }
+    .venue-qr-link .qr-hint { font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: rgba(201,168,76,0.6); }
     .venue-qr-link span { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(201,168,76,0.8); border-bottom: 1px solid rgba(201,168,76,0.4); }
     .countdown-bar { display: flex; gap: 10px; justify-content: center; margin-top: 4px; }
     .countdown-unit { text-align: center; }
@@ -259,6 +258,7 @@
     .matrimony-qr-link { display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; cursor: pointer; transition: opacity 0.2s; }
     .matrimony-qr-link:hover { opacity: 0.8; }
     .matrimony-qr-link img { width: 100px; height: 100px; border-radius: 10px; border: 2px solid rgba(201,168,76,0.5); background: white; padding: 4px; }
+    .matrimony-qr-link .qr-hint { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(201,168,76,0.55); }
     .matrimony-qr-link span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.8); border-bottom: 1px solid rgba(201,168,76,0.4); }
     .matrimony-closing { font-style: italic; font-size: clamp(13px,3.5vw,15px); color: rgba(253,246,236,0.75); line-height: 1.8; margin-top: 4px; }
     .wedding-footer { margin-top: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,168,76,0.45); position: relative; z-index: 2; }
@@ -313,8 +313,6 @@
         </div>
         <div class="env-card-divider"><hr/><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" fill="#c97b8a" opacity="0.7"/></svg><hr/></div>
         <div class="env-card-event">Engagement Ceremony</div>
-        <div class="env-card-date">Saturday, 11 April 2026<br/>11:30 AM</div>
-        <div class="env-card-venue">St. Antony's Forane Church<br/>Pudukad, Thrissur</div>
       </div>
     </div>
 
@@ -415,6 +413,7 @@
             <div class="venue-qr-row">
               <div class="venue-text"><div class="detail-card-value">St. Antony's Forane Church<br/>Pudukad</div></div>
               <a class="venue-qr-link" href="https://maps.google.com/?q=St+Antony+Forane+Church+Pudukad+Thrissur+Kerala" target="_blank" rel="noopener">
+                <span class="qr-hint">Tap or Scan</span>
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=4a2c35&bgcolor=fdf6ec&data=https://maps.google.com/?q=St+Antony+Forane+Church+Pudukad+Thrissur+Kerala" alt="Map QR" loading="lazy"/>
                 <span>Get Directions</span>
               </a>
@@ -428,6 +427,7 @@
                 <div style="font-size:11px;color:rgba(253,246,236,0.5);margin-top:4px;letter-spacing:1px;">Following the ceremony</div>
               </div>
               <a class="venue-qr-link" href="https://maps.google.com/?q=Zion+Parish+Hall+Pudukad+Thrissur+Kerala" target="_blank" rel="noopener">
+                <span class="qr-hint">Tap or Scan</span>
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&color=4a2c35&bgcolor=fdf6ec&data=https://maps.google.com/?q=Zion+Parish+Hall+Pudukad+Thrissur+Kerala" alt="Map QR" loading="lazy"/>
                 <span>Get Directions</span>
               </a>
@@ -507,6 +507,7 @@
 
       <div class="matrimony-qr-wrap fade-in delay-3">
         <a class="matrimony-qr-link" href="https://maps.google.com/?q=Marth+Mariam+Cathedral+Church+Thrissur+Kerala" target="_blank" rel="noopener">
+          <span class="qr-hint">Tap or Scan</span>
           <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=2a1520&bgcolor=fdf6ec&data=https://maps.google.com/?q=Marth+Mariam+Cathedral+Church+Thrissur+Kerala" alt="Map QR" loading="lazy"/>
           <span>Get Directions</span>
         </a>
