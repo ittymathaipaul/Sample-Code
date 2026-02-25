@@ -58,6 +58,7 @@
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       background: radial-gradient(ellipse at center, #fdf6ec 0%, #f5e6e0 60%, #ede0d4 100%);
       transition: opacity 0.8s ease, visibility 0.8s ease;
+      opacity: 0; visibility: hidden; pointer-events: none;
     }
     #envelope-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .petal {
@@ -166,7 +167,7 @@
     .invite-label p { font-size: clamp(11px,3vw,13px); letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
 
     /* ══ MAIN CONTENT ══ */
-    #main-content { opacity: 0; visibility: hidden; transition: opacity 1s ease 0.4s, visibility 0s linear 1.4s; }
+    #main-content { opacity: 1; visibility: visible; transition: opacity 1s ease 0.4s, visibility 0s linear 1.4s; }
     #main-content.visible { opacity: 1; visibility: visible; transition: opacity 1s ease 0.4s; }
 
     section {
@@ -714,6 +715,9 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  /* Trigger fade-ins on direct load (envelope hidden) */
+  triggerFadeIns();
 </script>
 </body>
 </html>
