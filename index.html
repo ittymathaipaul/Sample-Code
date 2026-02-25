@@ -333,6 +333,10 @@
           <feComposite in="diffLight" in2="SourceGraphic" operator="in" result="clipped"/>
           <feBlend in="SourceGraphic" in2="clipped" mode="multiply"/>
         </filter>
+        <!-- clips the dashed inner border to the V-window interior only -->
+        <clipPath id="envInterior">
+          <polygon points="0,0 320,0 320,20 160,120 0,20"/>
+        </clipPath>
       </defs>
       <g filter="url(#roughEnv)">
         <rect x="0" y="0" width="320" height="200" rx="20" fill="#8b1a2a"/>
@@ -342,7 +346,7 @@
         <path d="M 0,180 A 20,20 0 0,1 20,200 L 300,200 A 20,20 0 0,1 320,180 L 160,120 Z" fill="#7a1522"/>
       </g>
       <rect x="0" y="0" width="320" height="200" rx="20" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
-      <rect x="6" y="6" width="308" height="188" rx="17" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+      <rect x="6" y="6" width="308" height="188" rx="17" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5" clip-path="url(#envInterior)"/>
     </svg>
 
     <!-- Interior warm glow -->
@@ -617,12 +621,51 @@
       inviteLabel.style.pointerEvents = 'none';
       inviteLabel.style.animation = 'none';
     }
-    /* 3 s delay before revealing main content */
+    /* After cardRise finishes (700ms delay + 1500ms anim = 2200ms),
+       FLIP-expand the card to fill the viewport, then reveal main content */
     setTimeout(() => {
-      envScreen.classList.add('hidden');
-      mainCont.classList.add('visible');
-      triggerFadeIns();
-    }, 3000);
+      const card = envelope.querySelector('.env-card');
+      const r = card.getBoundingClientRect();
+      /* Inverse-transform values so the card looks exactly where it is */
+      const scaleX = r.width  / window.innerWidth;
+      const scaleY = r.height / window.innerHeight;
+      const dx = r.left + r.width  / 2 - window.innerWidth  / 2;
+      const dy = r.top  + r.height / 2 - window.innerHeight / 2;
+      /* Move card to <body> to escape filter stacking context
+         (filter on .envelope-outer prevents position:fixed from
+         anchoring to the viewport if card stays inside it) */
+      document.body.appendChild(card);
+      card.style.position      = 'fixed';
+      card.style.top           = '0';
+      card.style.left          = '0';
+      card.style.width         = '100vw';
+      card.style.height        = '100vh';
+      card.style.margin        = '0';
+      card.style.boxSizing     = 'border-box';
+      card.style.borderRadius  = '8px';
+      card.style.zIndex        = '9999';
+      card.style.opacity       = '1';
+      card.style.display       = 'flex';
+      card.style.alignItems    = 'center';
+      card.style.justifyContent = 'center';
+      card.style.transformOrigin = 'center center';
+      card.style.transform     = `translate(${dx}px,${dy}px) scale(${scaleX},${scaleY})`;
+      /* Force reflow so the starting transform is painted before we animate */
+      card.offsetHeight; // eslint-disable-line no-unused-expressions
+      card.style.transition = 'transform 0.75s cubic-bezier(0.4,0,0.2,1), border-radius 0.75s, box-shadow 0.75s';
+      card.style.transform    = 'none';
+      card.style.borderRadius = '0';
+      card.style.boxShadow    = 'none';
+      /* Show main content while card is still on screen so it fades
+         in seamlessly over the cream background the card provides */
+      setTimeout(() => {
+        envScreen.classList.add('hidden');
+        mainCont.classList.add('visible');
+        triggerFadeIns();
+        /* Clean up the floating card once main content is visible */
+        setTimeout(() => { if (card.parentNode) card.parentNode.removeChild(card); }, 600);
+      }, 800);
+    }, 2200);
   }
   envelope.addEventListener('click', openEnvelope);
   envelope.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') openEnvelope(); });
