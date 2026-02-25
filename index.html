@@ -659,6 +659,8 @@
       /* Show main content while card is still on screen so it fades
          in seamlessly over the cream background the card provides */
       setTimeout(() => {
+        /* Always start at the first page (section-hero) */
+        scroller.scrollTop = 0;
         envScreen.classList.add('hidden');
         mainCont.classList.add('visible');
         triggerFadeIns();
