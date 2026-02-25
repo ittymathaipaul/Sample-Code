@@ -323,11 +323,24 @@
 
     <!-- Envelope body (no flap polygon) -->
     <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" class="env-body">
-      <rect x="0" y="0" width="320" height="200" rx="8" fill="#8b1a2a" stroke="#c9a84c" stroke-width="1.5"/>
-      <polygon points="0,20 160,120 320,20" fill="#7a1522"/>
-      <polygon points="0,20 0,200 160,120" fill="#6b1020"/>
-      <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
-      <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+      <defs>
+        <filter id="roughEnv" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="8" seed="3" result="noise"/>
+          <feDiffuseLighting in="noise" lighting-color="white" diffuseConstant="1" surfaceScale="1" result="diffLight">
+            <feDistantLight azimuth="100" elevation="55"/>
+          </feDiffuseLighting>
+          <feComposite in="diffLight" in2="SourceGraphic" operator="in" result="clipped"/>
+          <feBlend in="SourceGraphic" in2="clipped" mode="multiply"/>
+        </filter>
+      </defs>
+      <g filter="url(#roughEnv)">
+        <rect x="0" y="0" width="320" height="200" rx="8" fill="#8b1a2a"/>
+        <polygon points="0,20 160,120 320,20" fill="#7a1522"/>
+        <polygon points="0,20 0,200 160,120" fill="#6b1020"/>
+        <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
+        <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+      </g>
+      <rect x="0" y="0" width="320" height="200" rx="8" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
       <rect x="6" y="6" width="308" height="188" rx="5" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
     </svg>
 
@@ -337,7 +350,17 @@
     <!-- Flap as separate div for proper 3D rotation -->
     <div class="env-flap-wrap">
       <svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <polygon points="0,20 160,110 320,20 320,0 0,0" fill="#a02030"/>
+        <defs>
+          <filter id="roughFlap" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="8" seed="3" result="noise"/>
+            <feDiffuseLighting in="noise" lighting-color="white" diffuseConstant="1" surfaceScale="1" result="diffLight">
+              <feDistantLight azimuth="100" elevation="55"/>
+            </feDiffuseLighting>
+            <feComposite in="diffLight" in2="SourceGraphic" operator="in" result="clipped"/>
+            <feBlend in="SourceGraphic" in2="clipped" mode="multiply"/>
+          </filter>
+        </defs>
+        <polygon points="0,20 160,110 320,20 320,0 0,0" fill="#a02030" filter="url(#roughFlap)"/>
         <polyline points="0,20 160,110 320,20" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linejoin="round"/>
         <line x1="0" y1="0" x2="320" y2="0" stroke="#c9a84c" stroke-width="1.5"/>
       </svg>
@@ -351,9 +374,21 @@
          V-shaped interior opening -->
     <div class="env-pocket">
       <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="0,20 0,200 160,120"   fill="#6b1020"/>
-        <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
-        <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+        <defs>
+          <filter id="roughPocket" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="8" seed="3" result="noise"/>
+            <feDiffuseLighting in="noise" lighting-color="white" diffuseConstant="1" surfaceScale="1" result="diffLight">
+              <feDistantLight azimuth="100" elevation="55"/>
+            </feDiffuseLighting>
+            <feComposite in="diffLight" in2="SourceGraphic" operator="in" result="clipped"/>
+            <feBlend in="SourceGraphic" in2="clipped" mode="multiply"/>
+          </filter>
+        </defs>
+        <g filter="url(#roughPocket)">
+          <polygon points="0,20 0,200 160,120"   fill="#6b1020"/>
+          <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
+          <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+        </g>
       </svg>
     </div>
   </div>
