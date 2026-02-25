@@ -123,6 +123,32 @@
     }
     .opening .wax-seal { opacity: 0; }
 
+    /* Interior warm glow — lights up from inside when flap opens */
+    .env-light {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(ellipse 72% 55% at 50% 60%,
+        rgba(255,245,200,0.96) 0%,
+        rgba(255,215,100,0.55) 40%,
+        transparent 72%);
+      z-index: 2; pointer-events: none; opacity: 0; border-radius: 8px;
+    }
+    .opening .env-light { animation: envelopeGlow 2.2s ease-out 0.18s forwards; }
+    @keyframes envelopeGlow {
+      0%   { opacity: 0;   transform: scale(0.55); }
+      18%  { opacity: 1;   transform: scale(1);    }
+      55%  { opacity: 0.7; }
+      100% { opacity: 0;   transform: scale(1.08); }
+    }
+
+    /* Pocket overlay — same polygons as the envelope front panels, sits
+       ABOVE the card (z-index 7) so the card is hidden while inside and
+       only emerges through the transparent V-shaped interior opening */
+    .env-pocket {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 7; pointer-events: none; border-radius: 8px; overflow: hidden;
+    }
+    .env-pocket svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; }
+
     .invite-label { margin-top: 50px; text-align: center; animation: pulseLabel 2s ease-in-out infinite; position: relative; z-index: 2; transition: opacity 0.5s ease; }
     @keyframes pulseLabel { 0%,100% { opacity:1; transform:translateY(0); } 50% { opacity:0.6; transform:translateY(-4px); } }
     .invite-label h2 { font-family: 'Great Vibes', cursive; font-size: clamp(28px,8vw,42px); color: var(--deep); line-height: 1; }
@@ -285,6 +311,9 @@
       <rect x="6" y="6" width="308" height="188" rx="5" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
     </svg>
 
+    <!-- Interior warm glow -->
+    <div class="env-light"></div>
+
     <!-- Flap as separate div for proper 3D rotation -->
     <div class="env-flap-wrap">
       <svg viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -296,6 +325,17 @@
 
     <!-- Wax seal: PNG image -->
     <img class="wax-seal" src="images/Untitled (1).png" alt="wax seal"/>
+
+    <!-- Pocket overlay: mirrors the envelope's left / right / bottom panels,
+         sits above the card so the card stays hidden until it clears the
+         V-shaped interior opening -->
+    <div class="env-pocket">
+      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,20 0,200 160,120"   fill="#6b1020"/>
+        <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
+        <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
+      </svg>
+    </div>
   </div>
 </div>
 
