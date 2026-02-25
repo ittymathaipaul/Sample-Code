@@ -270,12 +270,12 @@
 
     <!-- Envelope body (no flap polygon) -->
     <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" class="env-body">
-      <rect x="0" y="20" width="320" height="180" rx="8" fill="#8b1a2a" stroke="#c9a84c" stroke-width="1.5"/>
+      <rect x="0" y="0" width="320" height="200" rx="8" fill="#8b1a2a" stroke="#c9a84c" stroke-width="1.5"/>
       <polygon points="0,20 160,120 320,20" fill="#7a1522"/>
       <polygon points="0,20 0,200 160,120" fill="#6b1020"/>
       <polygon points="320,20 320,200 160,120" fill="#6b1020"/>
       <polygon points="0,200 160,120 320,200" fill="#7a1522"/>
-      <rect x="6" y="26" width="308" height="168" rx="5" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
+      <rect x="6" y="6" width="308" height="188" rx="5" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="4 3" opacity="0.5"/>
     </svg>
 
     <!-- Flap as separate div for proper 3D rotation -->
@@ -287,14 +287,26 @@
       </svg>
     </div>
 
-    <!-- Wax seal: PNG with SVG inline fallback -->
-    <img class="wax-seal" src="images/wax-seal.png" alt=""
-         onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-    <svg class="wax-seal" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="display:none">
-      <circle cx="30" cy="30" r="28" fill="#8b2635"/>
-      <circle cx="30" cy="30" r="24" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
-      <circle cx="30" cy="30" r="20" fill="#a02d3e"/>
-      <text x="30" y="36" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#e8d5a3" font-style="italic">R&amp;I</text>
+    <!-- Wax seal: inline SVG starburst design -->
+    <svg class="wax-seal" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sealGrad" cx="40%" cy="35%">
+          <stop offset="0%" stop-color="#e8c060"/>
+          <stop offset="100%" stop-color="#9a6e1a"/>
+        </radialGradient>
+      </defs>
+      <!-- 8-point starburst outer ring -->
+      <polygon points="30,1 39.2,7.8 50.5,9.5 52.2,20.8 59,30 52.2,39.2 50.5,50.5 39.2,52.2 30,59 20.8,52.2 9.5,50.5 7.8,39.2 1,30 7.8,20.8 9.5,9.5 20.8,7.8" fill="url(#sealGrad)"/>
+      <!-- Wax body -->
+      <circle cx="30" cy="30" r="24.5" fill="#8b1a2a"/>
+      <!-- Gold ring -->
+      <circle cx="30" cy="30" r="21.5" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+      <!-- Inner wax -->
+      <circle cx="30" cy="30" r="18.5" fill="#a02030"/>
+      <!-- Inner accent ring -->
+      <circle cx="30" cy="30" r="16" fill="none" stroke="#e8d5a3" stroke-width="0.7"/>
+      <!-- Monogram -->
+      <text x="30" y="34" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#e8d5a3" font-style="italic" font-weight="bold">R&amp;I</text>
     </svg>
   </div>
 </div>
@@ -451,6 +463,17 @@
         this joyous occasion with you.
       </div>
       <div style="border-top:1px solid rgba(201,168,76,0.2);margin:14px 0;width:100%;"></div>
+
+      <!-- Holy Matrimony notice above sharing happiness -->
+      <div class="section-tag fade-in delay-3" style="color:var(--gold-light);margin-bottom:4px;">✝ Holy Matrimony — For Your Prayers</div>
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(12px,3vw,14px);color:var(--cream);line-height:1.5;margin-bottom:2px;" class="fade-in delay-3">
+        Marth Mariam Cathedral Church<br/>Thrissur
+      </div>
+      <div style="font-size:clamp(11px,2.8vw,13px);color:var(--gold-light);letter-spacing:0.5px;margin-bottom:12px;" class="fade-in delay-3">
+        Sunday, 19 April 2026 &nbsp;·&nbsp; 10:10 AM
+      </div>
+
+      <div style="border-top:1px solid rgba(201,168,76,0.2);margin:4px 0 10px;width:100%;"></div>
       <div class="sharing-label fade-in delay-3">Sharing Happiness With</div>
       <div class="sharing-names fade-in delay-3">Lidiya, Jobi &amp; Mikhael</div>
     </div>
